@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rdf:RDF xmlns:j.0="http://www.meandre.org/ontology/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <j.0:data_port rdf:about="meandre://test.org/component/pass-through/input/string">
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">meandre://test.org/component/pass-through/input/string</dc:identifier>
+    <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</j.0:name>
+    <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The string to convert</dc:description>
+  </j.0:data_port>
+  <j.0:instance_configuration rdf:about="meandre://test.org/blah/blah/simple-test/instance/print-object/1">
+    <j.0:instance_resource>
+      <j.0:executable_component rdf:about="meandre://test.org/component/print-object">
+        <j.0:firing_policy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">all</j.0:firing_policy>
+        <j.0:execution_context rdf:resource="meandre://test.org/component/"/>
+        <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">demo</j.0:tag>
+        <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">object</j.0:tag>
+        <j.0:runnable rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java</j.0:runnable>
+        <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Print Object</j.0:name>
+        <j.0:mode rdf:resource="http://www.meandre.org/ontology/component/type/compute"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-09-11T21:06:03</dc:date>
+        <j.0:input_data_port>
+          <j.0:data_port rdf:about="meandre://test.org/component/print-object/input/object">
+            <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">meandre://test.org/component/print-object/input/object</dc:identifier>
+            <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">object</j.0:name>
+            <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The object to print</dc:description>
+          </j.0:data_port>
+        </j.0:input_data_port>
+        <j.0:resource_location rdf:resource="meandre://test.org/component/org.meandre.demo.components.PrintObjectComponent"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xavier Llor&amp;agrave;</dc:creator>
+        <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">print</j.0:tag>
+        <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prints the object in the input to the standard output</dc:description>
+        <dc:format rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java/class</dc:format>
+        <j.0:property_set>
+          <j.0:property rdf:about="meandre://test.org/component/print-object/property/count">
+            <j.0:key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">count</j.0:key>
+            <j.0:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</j.0:value>
+            <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">If set to true prints the count of printed objects</dc:description>
+          </j.0:property>
+        </j.0:property_set>
+        <dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">University of Illinois/NCSA open source license</dc:rights>
+      </j.0:executable_component>
+    </j.0:instance_resource>
+    <j.0:instance_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Print Object</j.0:instance_name>
+    <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prints the object in the input to the standard output</dc:description>
+    <j.0:property_set>
+      <j.0:property rdf:about="meandre://test.org/blah/blah/simple-test/instance/print-object/1/property/wb_left_pix_pos">
+        <j.0:key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wb_left_pix_pos</j.0:key>
+        <j.0:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">298</j.0:value>
+      </j.0:property>
+    </j.0:property_set>
+    <j.0:property_set>
+      <j.0:property rdf:about="meandre://test.org/blah/blah/simple-test/instance/print-object/1/property/wb_top_pix_pos">
+        <j.0:key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wb_top_pix_pos</j.0:key>
+        <j.0:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">121</j.0:value>
+      </j.0:property>
+    </j.0:property_set>
+    <j.0:property_set>
+      <j.0:property rdf:about="meandre://test.org/blah/blah/simple-test/instance/print-object/1/property/count">
+        <j.0:key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">count</j.0:key>
+        <j.0:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</j.0:value>
+      </j.0:property>
+    </j.0:property_set>
+  </j.0:instance_configuration>
+  <j.0:property rdf:about="meandre://test.org/blah/blah/simple-test/instance/push-string/0/property/message">
+    <j.0:key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">message</j.0:key>
+    <j.0:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hello World!!! Happy Meandring!!!</j.0:value>
+  </j.0:property>
+  <j.0:executable_component rdf:about="meandre://test.org/component/push-string">
+    <dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">University of Illinois/NCSA open source license</dc:rights>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-09-11T21:06:03</dc:date>
+    <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Push String</j.0:name>
+    <j.0:property_set>
+      <j.0:property rdf:about="meandre://test.org/component/push-string/property/message">
+        <j.0:key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">message</j.0:key>
+        <j.0:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hello World!!! Happy Meandring!!!</j.0:value>
+        <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The string message to be pushed trough the output port</dc:description>
+      </j.0:property>
+    </j.0:property_set>
+    <j.0:runnable rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java</j.0:runnable>
+    <j.0:output_data_port>
+      <j.0:data_port rdf:about="meandre://test.org/component/push-string/output/string">
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">meandre://test.org/component/push-string/output/string</dc:identifier>
+        <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</j.0:name>
+        <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The string being pushed</dc:description>
+      </j.0:data_port>
+    </j.0:output_data_port>
+    <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pushes the string stored into the properties to the output</dc:description>
+    <j.0:execution_context rdf:resource="meandre://test.org/component/"/>
+    <j.0:property_set>
+      <j.0:property rdf:about="meandre://test.org/component/push-string/property/times">
+        <j.0:key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">times</j.0:key>
+        <j.0:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</j.0:value>
+        <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Number of time to push the string</dc:description>
+      </j.0:property>
+    </j.0:property_set>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xavier Llor&amp;agrave;</dc:creator>
+    <j.0:firing_policy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">all</j.0:firing_policy>
+    <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</j.0:tag>
+    <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">demo</j.0:tag>
+    <dc:format rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java/class</dc:format>
+    <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hello_world</j.0:tag>
+    <j.0:mode rdf:resource="http://www.meandre.org/ontology/component/type/compute"/>
+    <j.0:resource_location rdf:resource="meandre://test.org/component/org.meandre.demo.components.PushStringComponent"/>
+  </j.0:executable_component>
+  <j.0:instance_set rdf:about="meandre://test.org/blah/blah/simple-test/components/set">
+    <j.0:executable_component_instance>
+      <j.0:instance_configuration rdf:about="meandre://test.org/blah/blah/simple-test/instance/push-string/0">
+        <j.0:instance_resource rdf:resource="meandre://test.org/component/push-string"/>
+        <j.0:instance_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Push String</j.0:instance_name>
+        <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pushes the string stored into the properties to the output</dc:description>
+        <j.0:property_set>
+          <j.0:property rdf:about="meandre://test.org/blah/blah/simple-test/instance/push-string/0/property/wb_left_pix_pos">
+            <j.0:key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wb_left_pix_pos</j.0:key>
+            <j.0:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">189</j.0:value>
+          </j.0:property>
+        </j.0:property_set>
+        <j.0:property_set>
+          <j.0:property rdf:about="meandre://test.org/blah/blah/simple-test/instance/push-string/0/property/wb_top_pix_pos">
+            <j.0:key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wb_top_pix_pos</j.0:key>
+            <j.0:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">121</j.0:value>
+          </j.0:property>
+        </j.0:property_set>
+        <j.0:property_set rdf:resource="meandre://test.org/blah/blah/simple-test/instance/push-string/0/property/message"/>
+        <j.0:property_set>
+          <j.0:property rdf:about="meandre://test.org/blah/blah/simple-test/instance/push-string/0/property/times">
+            <j.0:key rdf:datatype="http://www.w3.org/2001/XMLSchema#string">times</j.0:key>
+            <j.0:value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">100</j.0:value>
+          </j.0:property>
+        </j.0:property_set>
+      </j.0:instance_configuration>
+    </j.0:executable_component_instance>
+    <j.0:executable_component_instance rdf:resource="meandre://test.org/blah/blah/simple-test/instance/print-object/1"/>
+  </j.0:instance_set>
+  <j.0:data_port rdf:about="meandre://test.org/component/concatenate-strings/input/string_two">
+    <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">meandre://test.org/component/concatenate-strings/input/string_two</dc:identifier>
+    <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string_two</j.0:name>
+    <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The second string to concatenate</dc:description>
+  </j.0:data_port>
+  <j.0:data_connector_configuration rdf:about="meandre://test.org/flow/test-hello-world-with-python-and-lisp/connector/3">
+    <j.0:connector_instance_source>
+      <j.0:instance_configuration rdf:about="meandre://test.org/flow/test-hello-world-with-python-and-lisp/instance/to-uppercase/3">
+        <j.0:instance_resource>
+          <j.0:executable_component rdf:about="meandre://test.org/component/to-uppercase">
+            <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">To Uppercase</j.0:name>
+            <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-09-11T21:06:03</dc:date>
+            <j.0:firing_policy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">all</j.0:firing_policy>
+            <j.0:execution_context rdf:datatype="http://www.w3.org/2001/XMLSchema#string">def initialize(ccp):
+   pass
+
+def execute(cc):
+   s = cc.getDataComponentFromInput("string") 
+   cc.pushDataComponentToOutput("string",s.upper()) 
+
+def dispose(ccp):
+   pass
+
+</j.0:execution_context>
+            <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</j.0:tag>
+            <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uppercase</j.0:tag>
+            <j.0:input_data_port>
+              <j.0:data_port rdf:about="meandre://test.org/component/to-uppercase/input/string">
+                <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">meandre://test.org/component/to-uppercase/input/string</dc:identifier>
+                <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</j.0:name>
+                <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The string to convert</dc:description>
+              </j.0:data_port>
+            </j.0:input_data_port>
+            <dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">University of Illinois/NCSA open source license</dc:rights>
+            <j.0:resource_location rdf:resource="meandre://test.org/component/"/>
+            <j.0:runnable rdf:datatype="http://www.w3.org/2001/XMLSchema#string">python</j.0:runnable>
+            <dc:format rdf:datatype="http://www.w3.org/2001/XMLSchema#string">jython</dc:format>
+            <j.0:output_data_port>
+              <j.0:data_port rdf:about="meandre://test.org/component/to-uppercase/output/string">
+                <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">meandre://test.org/component/to-uppercase/output/string</dc:identifier>
+                <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</j.0:name>
+                <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The uppercased string</dc:description>
+              </j.0:data_port>
+            </j.0:output_data_port>
+            <j.0:mode rdf:resource="http://www.meandre.org/ontology/component/type/compute"/>
+            <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xavier Llor&amp;agrave;</dc:creator>
+            <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">demo</j.0:tag>
+            <j.0:execution_context rdf:resource="meandre://test.org/component/"/>
+            <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Turns the input string into an upper case and pushes it to the output</dc:description>
+          </j.0:executable_component>
+        </j.0:instance_resource>
+        <j.0:instance_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">To Uppercasde 0</j.0:instance_name>
+        <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Converts a strings to uppercase</dc:description>
+      </j.0:instance_configuration>
+    </j.0:connector_instance_source>
+    <j.0:connector_instance_data_port_source rdf:resource="meandre://test.org/component/to-uppercase/output/string"/>
+    <j.0:connector_instance_target>
+      <j.0:instance_configuration rdf:about="meandre://test.org/flow/test-hello-world-with-python-and-lisp/instance/pass-through/4">
+        <j.0:instance_resource>
+          <j.0:executable_component rdf:about="meandre://test.org/component/pass-through">
+            <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-09-11T21:06:03</dc:date>
+            <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pass Through</j.0:name>
+            <j.0:execution_context rdf:resource="meandre://test.org/component/"/>
+            <j.0:mode rdf:resource="http://www.meandre.org/ontology/component/type/compute"/>
+            <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pass through</j.0:tag>
+            <j.0:output_data_port>
+              <j.0:data_port rdf:about="meandre://test.org/component/pass-through/output/string">
+                <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">meandre://test.org/component/pass-through/output/string</dc:identifier>
+                <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</j.0:name>
+                <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The converted string</dc:description>
+              </j.0:data_port>
+            </j.0:output_data_port>
+            <j.0:firing_policy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">all</j.0:firing_policy>
+            <j.0:resource_location rdf:resource="meandre://test.org/component/"/>
+            <dc:format rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clojure</dc:format>
+            <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</j.0:tag>
+            <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Passes the input string to the output string with no modifications</dc:description>
+            <j.0:runnable rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lisp</j.0:runnable>
+            <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">demo</j.0:tag>
+            <dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">University of Illinois/NCSA open source license</dc:rights>
+            <j.0:execution_context rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(defn initialize [x] 1 )
+(defn execute [x] 
+        (. x (pushDataComponentToOutput 
+                 "string"
+                 (. x (getDataComponentFromInput "string")))) )
+(defn dispose [x] 1 )
+</j.0:execution_context>
+            <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xavier Llor&amp;agrave;</dc:creator>
+            <j.0:input_data_port rdf:resource="meandre://test.org/component/pass-through/input/string"/>
+          </j.0:executable_component>
+        </j.0:instance_resource>
+        <j.0:instance_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pass Through 0</j.0:instance_name>
+        <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Passes the object through</dc:description>
+      </j.0:instance_configuration>
+    </j.0:connector_instance_target>
+    <j.0:connector_instance_data_port_target rdf:resource="meandre://test.org/component/pass-through/input/string"/>
+  </j.0:data_connector_configuration>
+  <j.0:flow_component rdf:about="meandre://test.org/flow/test-hello-world-with-python-and-lisp/">
+    <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A simple hello world test</dc:description>
+    <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">demo</j.0:tag>
+    <j.0:connectors>
+      <j.0:connector_set rdf:about="meandre://test.org/flow/test-hello-world-with-python-and-lisp/connector/set">
+        <j.0:data_connector rdf:resource="meandre://test.org/flow/test-hello-world-with-python-and-lisp/connector/3"/>
+        <j.0:data_connector>
+          <j.0:data_connector_configuration rdf:about="meandre://test.org/flow/test-hello-world-with-python-and-lisp/connector/4">
+            <j.0:connector_instance_source rdf:resource="meandre://test.org/flow/test-hello-world-with-python-and-lisp/instance/pass-through/4"/>
+            <j.0:connector_instance_data_port_source rdf:resource="meandre://test.org/component/pass-through/output/string"/>
+            <j.0:connector_instance_target>
+              <j.0:instance_configuration rdf:about="meandre://test.org/flow/test-hello-world-with-python-and-lisp/instance/print-object/5">
+                <j.0:instance_resource rdf:resource="meandre://test.org/component/print-object"/>
+                <j.0:instance_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Print Object 0</j.0:instance_name>
+                <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Prints the concatenated object</dc:description>
+              </j.0:instance_configuration>
+            </j.0:connector_instance_target>
+            <j.0:connector_instance_data_port_target rdf:resource="meandre://test.org/component/print-object/input/object"/>
+          </j.0:data_connector_configuration>
+        </j.0:data_connector>
+        <j.0:data_connector>
+          <j.0:data_connector_configuration rdf:about="meandre://test.org/flow/test-hello-world-with-python-and-lisp/connector/0">
+            <j.0:connector_instance_source>
+              <j.0:instance_configuration rdf:about="meandre://test.org/flow/test-hello-world-with-python-and-lisp/instance/push-string/0">
+                <j.0:instance_resource rdf:resource="meandre://test.org/component/push-string"/>
+                <j.0:instance_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Push String 0</j.0:instance_name>
+                <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Push hello world</dc:description>
+              </j.0:instance_configuration>
+            </j.0:connector_instance_source>
+            <j.0:connector_instance_data_port_source rdf:resource="meandre://test.org/component/push-string/output/string"/>
+            <j.0:connector_instance_target>
+              <j.0:instance_configuration rdf:about="meandre://test.org/flow/test-hello-world-with-python-and-lisp/instance/concatenate_string/2">
+                <j.0:instance_resource>
+                  <j.0:executable_component rdf:about="meandre://test.org/component/concatenate-strings">
+                    <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string</j.0:tag>
+                    <j.0:resource_location rdf:resource="meandre://test.org/component/org.meandre.demo.components.ConcatenateStringsComponent"/>
+                    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-09-11T21:06:03</dc:date>
+                    <j.0:mode rdf:resource="http://www.meandre.org/ontology/component/type/compute"/>
+                    <j.0:execution_context rdf:resource="meandre://test.org/component/"/>
+                    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xavier Llor&amp;agrave;</dc:creator>
+                    <j.0:runnable rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java</j.0:runnable>
+                    <dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">University of Illinois/NCSA open source license</dc:rights>
+                    <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">demo</j.0:tag>
+                    <j.0:input_data_port>
+                      <j.0:data_port rdf:about="meandre://test.org/component/concatenate-strings/input/string_one">
+                        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">meandre://test.org/component/concatenate-strings/input/string_one</dc:identifier>
+                        <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">string_one</j.0:name>
+                        <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The first string to concatenate</dc:description>
+                      </j.0:data_port>
+                    </j.0:input_data_port>
+                    <j.0:firing_policy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">all</j.0:firing_policy>
+                    <j.0:output_data_port>
+                      <j.0:data_port rdf:about="meandre://test.org/component/concatenate-strings/output/concatenated_string">
+                        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">meandre://test.org/component/concatenate-strings/output/concatenated_string</dc:identifier>
+                        <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concatenated_string</j.0:name>
+                        <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The concatenated string</dc:description>
+                      </j.0:data_port>
+                    </j.0:output_data_port>
+                    <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">concatenate</j.0:tag>
+                    <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concatenate Strings</j.0:name>
+                    <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concatenates the to input string to the output</dc:description>
+                    <j.0:input_data_port rdf:resource="meandre://test.org/component/concatenate-strings/input/string_two"/>
+                    <dc:format rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java/class</dc:format>
+                  </j.0:executable_component>
+                </j.0:instance_resource>
+                <j.0:instance_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concatenate String 0</j.0:instance_name>
+                <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Concatenates two strings</dc:description>
+              </j.0:instance_configuration>
+            </j.0:connector_instance_target>
+            <j.0:connector_instance_data_port_target rdf:resource="meandre://test.org/component/concatenate-strings/input/string_two"/>
+          </j.0:data_connector_configuration>
+        </j.0:data_connector>
+        <j.0:data_connector>
+          <j.0:data_connector_configuration rdf:about="meandre://test.org/flow/test-hello-world-with-python-and-lisp/connector/2">
+            <j.0:connector_instance_source rdf:resource="meandre://test.org/flow/test-hello-world-with-python-and-lisp/instance/concatenate_string/2"/>
+            <j.0:connector_instance_data_port_source rdf:resource="meandre://test.org/component/concatenate-strings/output/concatenated_string"/>
+            <j.0:connector_instance_target rdf:resource="meandre://test.org/flow/test-hello-world-with-python-and-lisp/instance/to-uppercase/3"/>
+            <j.0:connector_instance_data_port_target rdf:resource="meandre://test.org/component/to-uppercase/input/string"/>
+          </j.0:data_connector_configuration>
+        </j.0:data_connector>
+        <j.0:data_connector>
+          <j.0:data_connector_configuration rdf:about="meandre://test.org/flow/test-hello-world-with-python-and-lisp/connector/1">
+            <j.0:connector_instance_source>
+              <j.0:instance_configuration rdf:about="meandre://test.org/flow/test-hello-world-with-python-and-lisp/instance/push-string/1">
+                <j.0:instance_resource rdf:resource="meandre://test.org/component/push-string"/>
+                <j.0:instance_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Push String 1</j.0:instance_name>
+                <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Push hello world</dc:description>
+              </j.0:instance_configuration>
+            </j.0:connector_instance_source>
+            <j.0:connector_instance_data_port_source rdf:resource="meandre://test.org/component/push-string/output/string"/>
+            <j.0:connector_instance_target rdf:resource="meandre://test.org/flow/test-hello-world-with-python-and-lisp/instance/concatenate_string/2"/>
+            <j.0:connector_instance_data_port_target rdf:resource="meandre://test.org/component/concatenate-strings/input/string_one"/>
+          </j.0:data_connector_configuration>
+        </j.0:data_connector>
+      </j.0:connector_set>
+    </j.0:connectors>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-09-11T21:06:03</dc:date>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xavier Llor&amp;agrave;</dc:creator>
+    <j.0:components_instances>
+      <j.0:instance_set rdf:about="meandre://test.org/flow/test-hello-world-with-python-and-lisp/components/set">
+        <j.0:executable_component_instance rdf:resource="meandre://test.org/flow/test-hello-world-with-python-and-lisp/instance/to-uppercase/3"/>
+        <j.0:executable_component_instance rdf:resource="meandre://test.org/flow/test-hello-world-with-python-and-lisp/instance/push-string/0"/>
+        <j.0:executable_component_instance rdf:resource="meandre://test.org/flow/test-hello-world-with-python-and-lisp/instance/pass-through/4"/>
+        <j.0:executable_component_instance rdf:resource="meandre://test.org/flow/test-hello-world-with-python-and-lisp/instance/concatenate_string/2"/>
+        <j.0:executable_component_instance rdf:resource="meandre://test.org/flow/test-hello-world-with-python-and-lisp/instance/push-string/1"/>
+        <j.0:executable_component_instance rdf:resource="meandre://test.org/flow/test-hello-world-with-python-and-lisp/instance/print-object/5"/>
+      </j.0:instance_set>
+    </j.0:components_instances>
+    <dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">University of Illinois/NCSA open source license</dc:rights>
+    <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hello_world</j.0:tag>
+    <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hello World With Java, Python, and Lisp Components!!!</j.0:name>
+  </j.0:flow_component>
+  <j.0:executable_component rdf:about="meandre://test.org/component/fork-2-by-reference">
+    <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">demo</j.0:tag>
+    <j.0:resource_location rdf:resource="meandre://test.org/component/org.meandre.demo.components.ForkByReference"/>
+    <j.0:runnable rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java</j.0:runnable>
+    <dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string">University of Illinois/NCSA open source license</dc:rights>
+    <j.0:mode rdf:resource="http://www.meandre.org/ontology/component/type/compute"/>
+    <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fork 2 by reference</j.0:name>
+    <dc:format rdf:datatype="http://www.w3.org/2001/XMLSchema#string">java/class</dc:format>
+    <j.0:execution_context rdf:resource="meandre://test.org/component/"/>
+    <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pushes the string stored into the properties to the output</dc:description>
+    <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reference</j.0:tag>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2007-09-11T21:06:03</dc:date>
+    <j.0:input_data_port>
+      <j.0:data_port rdf:about="meandre://test.org/component/fork-2-by-reference/input/object">
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">meandre://test.org/component/fork-2-by-reference/input/object</dc:identifier>
+        <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">object</j.0:name>
+        <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The object to fork</dc:description>
+      </j.0:data_port>
+    </j.0:input_data_port>
+    <j.0:output_data_port>
+      <j.0:data_port rdf:about="meandre://test.org/component/fork-2-by-reference/output/object-ref-two">
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">meandre://test.org/component/fork-2-by-reference/output/object-ref-two</dc:identifier>
+        <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">object_ref_two</j.0:name>
+        <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The first object</dc:description>
+      </j.0:data_port>
+    </j.0:output_data_port>
+    <j.0:firing_policy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">all</j.0:firing_policy>
+    <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">fork</j.0:tag>
+    <j.0:output_data_port>
+      <j.0:data_port rdf:about="meandre://test.org/component/fork-2-by-reference/output/object-ref-one">
+        <dc:identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string">meandre://test.org/component/fork-2-by-reference/output/object-ref-one</dc:identifier>
+        <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">object_ref_one</j.0:name>
+        <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The first object</dc:description>
+      </j.0:data_port>
+    </j.0:output_data_port>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xavier Llor&amp;agrave;</dc:creator>
+  </j.0:executable_component>
+  <j.0:data_connector_configuration rdf:about="meandre://test.org/blah/blah/simple-test/connector/0">
+    <j.0:connector_instance_source rdf:resource="meandre://test.org/blah/blah/simple-test/instance/push-string/0"/>
+    <j.0:connector_instance_data_port_source rdf:resource="meandre://test.org/component/push-string/output/string"/>
+    <j.0:connector_instance_target rdf:resource="meandre://test.org/blah/blah/simple-test/instance/print-object/1"/>
+    <j.0:connector_instance_data_port_target rdf:resource="meandre://test.org/component/print-object/input/object"/>
+  </j.0:data_connector_configuration>
+  <j.0:connector_set rdf:about="meandre://test.org/blah/blah/simple-test/connector/set">
+    <j.0:data_connector rdf:resource="meandre://test.org/blah/blah/simple-test/connector/0"/>
+  </j.0:connector_set>
+  <j.0:flow_component rdf:about="meandre://test.org/blah/blah/simple-test/">
+    <j.0:name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Simple test</j.0:name>
+    <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"/>
+    <dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#string"/>
+    <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">test</dc:creator>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2009-11-16T16:47:08</dc:date>
+    <j.0:tag rdf:datatype="http://www.w3.org/2001/XMLSchema#string">test</j.0:tag>
+    <j.0:connectors rdf:resource="meandre://test.org/blah/blah/simple-test/connector/set"/>
+    <j.0:components_instances rdf:resource="meandre://test.org/blah/blah/simple-test/components/set"/>
+  </j.0:flow_component>
+  <rdf:Description rdf:about="http://www.meandre.org/ontology/">
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2009-11-16T16:42:33</dc:date>
+    <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This is the current repository aggregated using Meandre</dc:description>
+  </rdf:Description>
+</rdf:RDF>
