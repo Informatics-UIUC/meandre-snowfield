@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Snowfield" basedir="." default="dist">
+	
+	<!-- Global application properties -->
+	<property name="app.name" value="snowfield"/>
+	<property name="build.version" value="0.1.vcli"/>
+	
+	<property name="scala.home"        value="/usr/local/share/scala"/>
+	<property name="scala-library.jar" value="${scala.home}/lib/scala-library.jar"/>
+	
+	<!-- Directory structure of the project -->
+	<property name="build.dir"     value="${basedir}/bin"/>
+	<property name="dist.dir"      value="${basedir}/dist"/>
+	<property name="test.dir"      value="${basedir}/test"/>
+	<property name="docs.dir"       value="${basedir}/scaladocs"/>
+	<property name="data.dir"      value="${basedir}/data"/>
+	<property name="test.data.dir" value="${basedir}/test-data"/>
+		
+	<!-- Global required jars folder -->
+	<property name="lib.dir" value="${basedir}/lib"/>
+
+	<!-- Source code locations -->
+	<property name="src.main.dir" value="src"/>
+	 
+	<!-- Test code locations -->
+	<property name="test.main.dir" value="src-test"/>
+	
+	<!-- Preparing the Scala build environment -->
+	<path id="build.classpath">
+		<pathelement location="${scala-library.jar}" />
+		<pathelement location="${build.dir}" />
+		<pathelement location="${lib.dir}/meandre-server-1.4.7.jar" />
+		<pathelement location="${lib.dir}/specs-1.6.0.jar" />
+		<pathelement location="${lib.dir}/scalacheck-1.6.jar" />
+	</path>
+	
+	<taskdef resource="scala/tools/ant/antlib.xml">
+		<classpath>
+			<pathelement location="${scala.home}/lib/scala-compiler.jar"   />
+	        <pathelement location="${scala-library.jar}"   />
+	    </classpath>
+	</taskdef>
+	
+	
+	<!-- The init task initialize the base build structure -->
+	<target name="init" description="-> initilizes required structures for the building process">
+		<tstamp/>
+	</target>
+    
+	<!-- Compiles the source code -->
+	<target name="compile" depends="init" description="-> compiles source code">
+		<mkdir dir="${build.dir}"/>
+		<scalac srcdir="${src.main.dir}"
+		        destdir="${build.dir}"
+		        classpathref="build.classpath">
+		    <include name="**/*.scala"   />
+		</scalac>
+	</target>
+    
+	<!-- Compiles the test code -->
+	<target name="compile-tests" depends="compile" description="-> compiles source code">
+		<mkdir dir="${test.dir}"/>
+		<scalac srcdir="${test.main.dir}"
+		        destdir="${test.dir}"
+		        classpathref="build.classpath">
+		    <include name="**/*.scala"   />
+		</scalac>
+	</target>
+	
+	<!-- Pack the compiled source code into a distribution jar -->
+	<target name="dist" depends="compile" description="-> creates a jar with the compiled code">
+		<mkdir dir="${dist.dir}"/>
+		<!-- Create the snowfield jar -->
+		<jar destfile="${dist.dir}/${app.name}-${build.version}.jar" >
+			<manifest>
+				<attribute name="Build-Version" value="${build.version}"/>
+			</manifest>
+			<fileset dir="${build.dir}">
+				<include name="**"/>
+			</fileset>
+		</jar>
+	</target>
+	
+	<!-- Clean the created folders during compilation -->
+	<target name="clean" description="-> removes build artifacts">
+	 	<delete dir="${build.dir}"/>
+	 	<delete dir="${docs.dir}"/>
+	    <delete dir="${test.dir}"/>
+	    <delete dir="${dist.dir}"/>
+	</target>
+	
+	<!-- Builds the scala docs for the main source code tree -->
+	<target name="docs" depends="init" description="-> generates the scala docs for the main source code tree">
+		<mkdir dir="${docs.dir}"/>
+		<scaladoc
+	      srcdir="${src.main.dir}"
+	      destdir="${docs.dir}"
+	      deprecation="yes" unchecked="yes"
+	      windowtitle="Snowfield Library Documentation"
+	      doctitle="&lt;div&gt;Snowfield ${build.version}&lt;/div&gt;"
+	      classpathref="build.classpath">
+	        <include name="**/*.scala"   />
+	    </scaladoc>
+	  </target>
+</project>

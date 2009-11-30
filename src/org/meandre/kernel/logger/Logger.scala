@@ -2,7 +2,7 @@ package org.meandre.kernel.logger
 
 import java.util.Date
 import java.text.SimpleDateFormat
-import java.util.logging.{Logger,Level,ConsoleHandler,Formatter,LogRecord}
+import java.util.logging._
 
 object LoggerFormatter extends Formatter {
   
@@ -27,8 +27,8 @@ object LoggerContainer {
 	val log = Logger.getLogger("[EL]")
 	log setLevel Level.INFO 
 
-	val logger=log.getParent();
-    for ( h<-logger.getHandlers if logger!=null ) h.setFormatter(LoggerFormatter) 
+	val parentLogger=log.getParent();
+    for ( h<-parentLogger.getHandlers if parentLogger!=null ) h.setFormatter(LoggerFormatter) 
     for ( h<-log.getHandlers ) h.setFormatter(LoggerFormatter)  
 	
  }

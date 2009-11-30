@@ -113,11 +113,7 @@ class ComponentActor ( val flow:FlowDescriptor, val cid:ComponentInstanceDescrip
         
         case Message(uriActor,"REGISTRY",broadcastedRegistry) =>
           	log info "Registry received from MrProper"
-          	//println(broadcastedRegistry)
-          	broadcastedRegistry match {
-          	  case r:List[(String,String,Int)] => initializeRegistry(r)
-              case _ => log warning "Received the wrong registry information"
-            }
+          	initializeRegistry(broadcastedRegistry.asInstanceOf[List[(String,String,Int)]])
           	
         case Exit(from, target) => 
           	log info "Component "+uri+" exiting by request of "+from+" because "+target

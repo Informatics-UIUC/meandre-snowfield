@@ -1,0 +1,41 @@
+PREREQUISIT
+===========
+
+Install Scala on your system. You can get it (as well as the instructions) at:
+
+  	http://www.scala-lang.org/downloads
+
+Check that the installation works by typing
+
+$ scala
+
+You should see something similar to 
+
+$ scala
+Welcome to Scala version 2.7.7.final (Java HotSpot(TM) 64-Bit Server VM, Java 1.6.0_15).
+Type in expressions to have them evaluated.
+Type :help for more information.
+
+scala> 
+
+Then type 
+
+scala> 1+1
+res0: Int = 2
+
+Type control+d to quit the REPL. Scala is ready to go.
+
+
+HOW TO RUN THE DEMO FLOW
+========================
+
+1. cd into test-data dir
+
+2. Start MrProper using MrProperLauncher
+clear && scala -cp ../bin/:../libraries/meandre-server-1.4.7.jar:../libraries/scalacheck-1.6.jar:../libraries/specs-1.6.0.jar org.meandre.apps.MrProperLauncher 10000 file:/Users/xavier/Documents/Workspace/Meandre-Experimental/FlowExecutionEngine/test-data/test_repository.rdf meandre://test.org/blah/blah/simple-test/
+
+3. Start the first instance on a separate process via ComponentLauncher
+clear && scala -cp ../bin/:../libraries/meandre-server-1.4.7.jar:../libraries/scalacheck-1.6.jar:../libraries/specs-1.6.0.jar org.meandre.apps.ComponentLauncher localhost 10000 localhost 20000 file:/Users/xavier/Documents/Workspace/Meandre-Experimental/FlowExecutionEngine/test-data/test_repository.rdf meandre://test.org/blah/blah/simple-test/ meandre://test.org/blah/blah/simple-test/instance/push-string/0
+
+4. Start the second instance on a separate process via ComponentLauncher
+clear && scala -cp ../bin/:../libraries/meandre-server-1.4.7.jar:../libraries/scalacheck-1.6.jar:../libraries/specs-1.6.0.jar org.meandre.apps.ComponentLauncher localhost 10000 localhost 20001 file:/Users/xavier/Documents/Workspace/Meandre-Experimental/FlowExecutionEngine/test-data/test_repository.rdf meandre://test.org/blah/blah/simple-test/ meandre://test.org/blah/blah/simple-test/instance/print-object/1
