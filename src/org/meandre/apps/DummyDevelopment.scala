@@ -6,6 +6,10 @@ import com.hp.hpl.jena.rdf.model._
 import org.meandre.kernel.rdf._
 import org.meandre.kernel.actors._
 
+/** This singleton it is just for development testing purposes. 
+ * 
+ * @author Xavier Llora
+ */
 object DummyDevelopment {
   
 	val url = new File("test-data"+File.separator+"test_repository.rdf").toURL.toString
@@ -18,8 +22,9 @@ object DummyDevelopment {
     	log.setLevel(Level.FINEST)
     	
     	println("Retrieving repository "+url)
-    	val components = DescriptorFactory.buildComponentDescriptors(url)
-    	val flows = DescriptorFactory.buildFlowDescriptors(url)
+    	val components = DescriptorsFactory(url)
+    	val flows = DescriptorsFactory(url)
+     
     	//new MrProperActor(flows.filter(_.uri=="meandre://test.org/blah/blah/simple-test/")(0),components)
     	// TODO Finish the testing
     	println("************** Sleeping")

@@ -12,15 +12,15 @@ object KernelSpecs extends Specification {
   
   "A description factory" should {
 	  "must extract components and flows in "+url in {
-	    DescriptorFactory.buildComponentDescriptors(url).size must be equalTo(6)
-	    DescriptorFactory.buildFlowDescriptors(url).size must be equalTo(2)
-	    DescriptorFactory.buildDescriptors(url).size must be equalTo(8)
+	    DescriptorsFactory.buildComponentDescriptors(url).size must be equalTo(6)
+	    DescriptorsFactory.buildFlowDescriptors(url).size must be equalTo(2)
+	    DescriptorsFactory(url).size must be equalTo(8)
 	  }
   }
   
   "The descriptors in "+url should {
     
-	   val descriptors  = DescriptorFactory.buildDescriptors(url)
+	   val descriptors  = DescriptorsFactory(url)
 	
 	  "have a common description and name" in {
 	    val names = descriptors.foldLeft(Set[String]())((a:Set[String],b:Descriptor)=>a+b.description.name)
@@ -141,8 +141,8 @@ object KernelSpecs extends Specification {
     	val logLevel = log.getLevel
     	log.setLevel(Level.WARNING)
     	
-    	val components = DescriptorFactory.buildComponentDescriptors(url)
-    	val flows = DescriptorFactory.buildFlowDescriptors(url)
+    	val components = DescriptorsFactory.buildComponentDescriptors(url)
+    	val flows = DescriptorsFactory.buildFlowDescriptors(url)
     	components.size must be equalTo(6)
     	flows.size must be equalTo(2)
     	//val mrp = new MrProperActor(flows.filter(_.uri=="meandre://test.org/blah/blah/simple-test/")(0),components)

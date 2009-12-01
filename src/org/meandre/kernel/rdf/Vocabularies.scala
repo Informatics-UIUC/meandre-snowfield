@@ -2,9 +2,9 @@ package org.meandre.kernel.rdf
 
 import com.hp.hpl.jena.rdf.model._
 
-/** This object contain the basic repository vocabulary.
+/** This object contain the basic repository vocabulary used by Meandre.
  *
- * @author Xavier
+ * @author Xavier Llora
  */
 object MeandreRepositoryVocabulary {
 
@@ -109,29 +109,9 @@ object MeandreRepositoryVocabulary {
 }
 
 
-///** This object contain the basic repository vocabulary.
-// *
-// * @author Xavier
-// */
-//object MeandreDistributedExecutionVocabulary {
-//
-//	/** The RDF model that holds the vocabulary terms */
-//	val m_model = ModelFactory.createDefaultModel
-//
-//	/** The namespace of the vocabulary as a string  */
-//	val NS = "http://www.meandre.org/ontology/distributed/"
-//
-//	/** The namespace of the vocabulary as a resource */
-//	val NAMESPACE = m_model.createResource(NS)
-//
-//	/** The basic port identifier. */
-//	val port = m_model.createProperty(NS+"port")
-//
-//}
-
-/** This object contains the basic repository vocabulary for Meandre.
+/** This object contains the basic probing vocabulary for Meandre.
  * 
- * @author Xavier 
+ * @author Xavier Llora
  *
  */
 object MeandreProbingVocabulary {
@@ -186,6 +166,5 @@ object MeandreProbingVocabulary {
 
        /** The executable component instance is cooling down. */
        val executable_component_instance_get_property = m_model.createProperty(NS+"executable_component_instance_get_property") 
-
 
 }

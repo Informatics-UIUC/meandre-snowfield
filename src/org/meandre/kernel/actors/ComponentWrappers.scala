@@ -8,6 +8,14 @@ import com.hp.hpl.jena.rdf.model._
 import org.meandre.kernel.rdf.{ComponentDescriptor,EmbeddedContext}
 import org.meandre.kernel.logger.LoggerContainer._
 
+/** A wrapper for a Meandre Component implemented in Java.
+ * 
+ * @param uri The uri of the component to instance
+ * @param component The component descriptor for the instance
+ * @param actor The component actor wrapping this component
+ *  
+ * @author Xavier Llora
+ */
 class JavaWrapper(uri:String, component:ComponentDescriptor, actor:ComponentActor ) extends ExecutableComponent {
   
   val className = List.fromString(component.resourceLocation,'/').last
@@ -30,6 +38,14 @@ class JavaWrapper(uri:String, component:ComponentDescriptor, actor:ComponentActo
 	
 } 
 
+/** A wrapper for a Meandre Component implemented in Lisp via Jython.
+ * 
+ * @param uri The uri of the component to instance
+ * @param component The component descriptor for the instance
+ * @param actor The component actor wrapping this component
+ *  
+ * @author Xavier Llora
+ */
 class PythonWrapper (uri:String, component:ComponentDescriptor, actor:ComponentActor )  extends JythonExecutableComponentAdapter {
   for ( ctx <- component.context ) ctx match {
     case EmbeddedContext(payload:Literal) => process(payload.getLexicalForm)
@@ -37,6 +53,14 @@ class PythonWrapper (uri:String, component:ComponentDescriptor, actor:ComponentA
   }
 } 
 
+/** A wrapper for a Meandre Component implemented in Lisp via Clojure.
+ * 
+ * @param uri The uri of the component to instance
+ * @param component The component descriptor for the instance
+ * @param actor The component actor wrapping this component
+ *  
+ * @author Xavier Llora
+ */
 class LispWrapper (uri:String, component:ComponentDescriptor, actor:ComponentActor )  extends ClojureExecutableComponentAdapter {
   for ( ctx <- component.context ) ctx match {
     case EmbeddedContext(payload:Literal) => process(payload.getLexicalForm)

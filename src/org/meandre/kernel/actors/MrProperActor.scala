@@ -13,9 +13,14 @@ import org.meandre.core._
 import org.meandre.kernel.rdf._
 import org.meandre.kernel.logger.LoggerContainer._
 
-//
-// Mr Proper actor
-// 
+/** Implements MrProper a.k.a the distributed flow execution coordinator.
+ *  
+ * @param port The port where MrProper will bind
+ * @param flow The flow description describing the flow being executed
+ * @param components The list of component descriptors used in the flow
+ * 
+ * @author Xavier Llora
+ */
 class MrProperActor ( port:Int,flow:FlowDescriptor, components:List[ComponentDescriptor] ) extends Actor {
  
   var dataUnitsCounter = 0L
@@ -82,14 +87,14 @@ class MrProperActor ( port:Int,flow:FlowDescriptor, components:List[ComponentDes
   }
 
   def pingAndBroadcast = {
-	  // Need to clean up the registry
+	  // TODO: Need to clean up the registry for multiple entries
 	  for ( (uri,hostName,port)<-registry ) {
 	     // Select the actor
 		 val actor = select( Node(hostName,port), Symbol(uri)) 
 		 link(actor)
 		 // Check if alive
 		 actor !? Status("PING") match {
-		   case Message(uriActor,"PING","PING") if uriActor==uri => 
+		   case Message(uriActor,"PING","PONG") if uriActor==uri => 
 		     	// Broadcast  the registry
 		     	actor ! Message(uriActor,"REGISTRY",registry)
 		   case _ => log warning "Failed to connect with instance "+uri
@@ -101,12 +106,6 @@ class MrProperActor ( port:Int,flow:FlowDescriptor, components:List[ComponentDes
   }
   
   start()
-
-//  val componentsMap = Map({for ( cmp <-components ) yield cmp.uri -> cmp}:_*)
-//  instancesMap  = Map({for ( ins<-flow.instances ) yield ins.uri -> new ComponentActor(flow,ins,componentsMap,this)}:_*)
-//  
-//  instancesMap.foreach(_._2 ! Config(instancesMap))
-//  instancesMap.foreach(_._2 ! Initialize() )
   
 }
 

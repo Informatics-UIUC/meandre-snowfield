@@ -13,11 +13,20 @@ import org.meandre.kernel.actors._
 
 import org.meandre.kernel.logger.LoggerContainer._
 
+/** This application is the entry point to launch the execution of at
+ *  least one component instance for a given flow. 
+ * 
+ * @author Xavier Llora
+ */
 object ComponentLauncher {
 
-	def main(args: Array[String]) : Unit = {
+	 /** Starts the execution of at least one instance in a flow.
+	  *
+	  * @param args Requires the following command line arguments <mr_proper_host> <mr_proper_port> <component_host> <component_base_port> <repository_url> <flow_uri> <instance_uri>+
+	  */
+	 def main(args: Array[String]) : Unit = {
 			if (args.size<6) {
-				println("MrProperLauncher requires <mr_proper_host> <mr_proper_port> <component_host> <component_base_port> <repository_url> <flow_uri> <instance_uri>+")            
+				println("ComponentLauncher requires <mr_proper_host> <mr_proper_port> <component_host> <component_base_port> <repository_url> <flow_uri> <instance_uri>+")            
 			}
 			else try {
 				val mrProperAddress = args(0)
@@ -30,19 +39,13 @@ object ComponentLauncher {
 
 				val mpn = Node(mrProperAddress,mrProperPort)
 
-				// Just for debug purposes
-				import org.meandre.kernel.logger.LoggerContainer._
-				import java.util.logging.Level
-				val logLevel = log.getLevel
-				log.setLevel(Level.FINEST)
-
-				log.info("Retrieving repository located at "+url)
-			    val components = DescriptorFactory.buildComponentDescriptors(url)
-			    val flows = DescriptorFactory.buildFlowDescriptors(url)
+				log info "Retrieving repository located at "+url
+			    val components = DescriptorsFactory.buildComponentDescriptors(url)
+			    val flows = DescriptorsFactory.buildFlowDescriptors(url)
 			    val flow = flows.filter(_.uri==flowUri)(0)
        
-			    log.info("MrProper for "+flowUri+" should be at "+mrProperAddress+":"+mrProperPort)
-			    log.info("Base port for this component launcher is set to "+componentHost+":"+basePort)
+			    log info "MrProper for "+flowUri+" should be at "+mrProperAddress+":"+mrProperPort 
+			    log info "Base port for this component launcher is set to "+componentHost+":"+basePort 
 			    
 			    for ( uri <- instanceUris ) log info "Creating component instance "+uri
 			    val actors = for ( uri <- instanceUris )  
@@ -53,19 +56,14 @@ object ComponentLauncher {
 			    						Node(mrProperAddress,mrProperPort), 
 			    						componentHost,
 			    						() => basePort )
-			    						//() => {basePort+=1;basePort} )
 			   
 				for ( a<-actors ) {
 			    	log info "Sending a NOP to "+a.cid.uri
 			    	a !? Status("NOP")
 			    }
-                      
-				//actors
-			   
-				
 			}
 			catch {
-			case e => log.severe("Failed to start because of "+e)
+				case e => log severe "Failed to start because of "+e
 			}
 
 	}

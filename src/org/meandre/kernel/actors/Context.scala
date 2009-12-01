@@ -12,6 +12,10 @@ import java.net.URL
 import java.io.PrintStream
 import java.io.File
 
+/** The class that implements the component context trait used by the components.
+ * 
+ * @author Xavier Llora
+ */
 class Context(instance:ComponentActor ) extends ComponentContext  {
 
   val inputNames    = Array(instance.inputs.slots.toList:_*)

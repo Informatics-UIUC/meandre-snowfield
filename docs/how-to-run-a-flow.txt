@@ -29,6 +29,8 @@ Type control+d to quit the REPL. Scala is ready to go.
 HOW TO RUN THE DEMO FLOW
 ========================
 
+0. Compile the code (you can use $ant compile)
+
 1. cd into test-data dir
 
 2. Start MrProper using MrProperLauncher
