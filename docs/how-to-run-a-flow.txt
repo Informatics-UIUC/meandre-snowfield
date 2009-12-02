@@ -29,15 +29,17 @@ Type control+d to quit the REPL. Scala is ready to go.
 HOW TO RUN THE DEMO FLOW
 ========================
 
-0. Compile the code (you can use $ant compile)
+0. Remember you may need to modify the URL to the repository file.
 
-1. cd into test-data dir
+1. Compile the code (you can use $ant compile)
 
-2. Start MrProper using MrProperLauncher
-clear && scala -cp ../bin/:../libraries/meandre-server-1.4.7.jar:../libraries/scalacheck-1.6.jar:../libraries/specs-1.6.0.jar org.meandre.apps.MrProperLauncher 10000 file:/Users/xavier/Documents/Workspace/Meandre-Experimental/FlowExecutionEngine/test-data/test_repository.rdf meandre://test.org/blah/blah/simple-test/
+2. cd into test-data dir
 
-3. Start the first instance on a separate process via ComponentLauncher
-clear && scala -cp ../bin/:../libraries/meandre-server-1.4.7.jar:../libraries/scalacheck-1.6.jar:../libraries/specs-1.6.0.jar org.meandre.apps.ComponentLauncher localhost 10000 localhost 20000 file:/Users/xavier/Documents/Workspace/Meandre-Experimental/FlowExecutionEngine/test-data/test_repository.rdf meandre://test.org/blah/blah/simple-test/ meandre://test.org/blah/blah/simple-test/instance/push-string/0
+3. Start MrProper using MrProperLauncher
+clear && scala -cp ../bin/:../lib/meandre-server-1.4.7.jar:../lib/scalacheck-1.6.jar:../lib/specs-1.6.0.jar org.meandre.apps.MrProperLauncher 10000 file:/Users/xavier/Documents/Workspace/Meandre-Experimental/FlowExecutionEngine/test-data/test_repository.rdf meandre://test.org/blah/blah/simple-test/
 
-4. Start the second instance on a separate process via ComponentLauncher
-clear && scala -cp ../bin/:../libraries/meandre-server-1.4.7.jar:../libraries/scalacheck-1.6.jar:../libraries/specs-1.6.0.jar org.meandre.apps.ComponentLauncher localhost 10000 localhost 20001 file:/Users/xavier/Documents/Workspace/Meandre-Experimental/FlowExecutionEngine/test-data/test_repository.rdf meandre://test.org/blah/blah/simple-test/ meandre://test.org/blah/blah/simple-test/instance/print-object/1
+4. Start the first instance on a separate process via ComponentLauncher
+clear && scala -cp ../bin/:../lib/meandre-server-1.4.7.jar:../lib/scalacheck-1.6.jar:../lib/specs-1.6.0.jar org.meandre.apps.ComponentLauncher localhost 10000 localhost 20000 file:/Users/xavier/Documents/Workspace/Meandre-Experimental/FlowExecutionEngine/test-data/test_repository.rdf meandre://test.org/blah/blah/simple-test/ meandre://test.org/blah/blah/simple-test/instance/push-string/0
+
+5. Start the second instance on a separate process via ComponentLauncher
+clear && scala -cp ../bin/:../lib/meandre-server-1.4.7.jar:../lib/scalacheck-1.6.jar:../lib/specs-1.6.0.jar org.meandre.apps.ComponentLauncher localhost 10000 localhost 20001 file:/Users/xavier/Documents/Workspace/Meandre-Experimental/FlowExecutionEngine/test-data/test_repository.rdf meandre://test.org/blah/blah/simple-test/ meandre://test.org/blah/blah/simple-test/instance/print-object/1
