@@ -29,6 +29,8 @@ import org.meandre.kernel.actors._
  */
 class ComponentActor ( val flow:FlowDescriptor, val cid:ComponentInstanceDescription, val components:Map[String,ComponentDescriptor], mrProperNode:Node, hostName:String, hostPort:() => Int) extends Actor {
 
+  protected val REGISTRATION_ATTEMPTS = 6
+
   val currentPort = hostPort()
   var registry:List[(String,String,Int)] = null
   var instances:Map[String,AbstractActor] = Map[String,AbstractActor]()
@@ -81,7 +83,28 @@ class ComponentActor ( val flow:FlowDescriptor, val cid:ComponentInstanceDescrip
   var eci:ExecutableComponent = null
   var context = new Context(this)
     
+  
+  //
+  // Attempts to register
+  //
+  def reliableRegistration ( attempt:Int ):Unit = attempt match {
+       case 0 => log severe "Failed to register with MrPropper. Forcing abort"
+                 System exit 1
+       case n => mrProper.!?(1000,Register(uri,hostName,currentPort)) match {
+                    case Some(Message(uri,"REGISTER","OK")) =>
+        	                // Successful registration
+                          log info "Registration request succeeded for instance "+uri
+                    case None =>
+                          // Timeout, try again
+                          log warning "Registration time out. Retrying. "+(attempt-1)+" attempts left."
+                          reliableRegistration(attempt-1)
+                    case Some(e) =>
+        	                log severe "Could not register because of "+e+". Bailing out..."
+        	                exit
+                  }
+  }
    
+ 
   // 
   // The main act loop react cycle
   //
@@ -93,13 +116,7 @@ class ComponentActor ( val flow:FlowDescriptor, val cid:ComponentInstanceDescrip
     register(Symbol(uri), self) 
     mrProper = select(mrProperNode, Symbol(flow.uri)) 
     log info "Sending register request to MrProper for "+uri
-    mrProper !? Register(uri,hostName,currentPort) match {
-      case Message(uri,"REGISTER","OK") =>
-        	log info "Registration request succeeded for instance "+uri
-      case e =>
-        	log severe "Could not register because of "+e+". Bailing out..."
-        	exit
-    }
+    reliableRegistration(REGISTRATION_ATTEMPTS)
     trapExit = true
     
     // And the main react loop 
